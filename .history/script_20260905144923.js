@@ -18,8 +18,8 @@ expenseForm.addEventListener("submit", function (event) {
   const descript = document.querySelector("#description").value;
   const category = document.querySelector("#category").value;
   const date = document.querySelector("#date").value;
+  let i =
   const expense = {
-    id: crypto.randomUUID(),
     expense: amount,
     description: descript,
     category: category,
@@ -29,7 +29,7 @@ expenseForm.addEventListener("submit", function (event) {
   console.log(expenses);
 
   const expenseElement = document.createElement("div");
-  expenseElement.id = expense.id;
+  expenseElement.id = expenses.length;
 
   expenseElement.innerHTML = `
     <p>${expense.description}</p>
@@ -44,10 +44,7 @@ expenseForm.addEventListener("submit", function (event) {
   deleteExpense.addEventListener("click", function () {
     expenseElement.remove();
     const index = expenses.findIndex((expense) => expense.id === expenseElement.id);
-    if(index !== -1){
-      expenses.splice(index, 1);
-    }
-      
+    expenses.splice(index, 1);
     console.log(expenses);
   });
 });

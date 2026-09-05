@@ -44,10 +44,8 @@ expenseForm.addEventListener("submit", function (event) {
   deleteExpense.addEventListener("click", function () {
     expenseElement.remove();
     const index = expenses.findIndex((expense) => expense.id === expenseElement.id);
-    if(index !== -1){
-      expenses.splice(index, 1);
-    }
-      
+    if(index !==)
+    expenses.splice(index, 1);
     console.log(expenses);
   });
 });

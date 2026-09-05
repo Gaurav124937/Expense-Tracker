@@ -59,15 +59,4 @@
     display: none;
 }
 
-.delete-expense-button{
-    padding: 10px;
-    border-radius: 5px;
-    border-color: black;
-    border: 1px solid;
-    margin-top: 20px;
-    font-size: 15px;
-    block-size: 40px;
-    color: white;
-    background-color: black;
-    width: 20%;
-}
+.delete
