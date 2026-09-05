@@ -1,0 +1,1 @@
+const adddocument.querySelector(".add-expense-button");

@@ -1,0 +1,21 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.monthly-expense-section{
+    display
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+}
+.income-section{
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+}
+.daily-expense-section{
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+}

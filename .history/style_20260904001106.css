@@ -1,0 +1,34 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.monthly-expense-section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+}
+.income-section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+}
+.daily-expense-section{
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+}
+.buttons-grid{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
