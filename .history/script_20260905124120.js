@@ -31,7 +31,7 @@ expenseForm.addEventListener("submit", function (event) {
 
   expenseElement.innerHTML = `
     <p>${expense.description}</p>
-    <p>₹${expense.expense}</p>
+    <p>₹${expense.exp}</p>
     <p>${expense.category}</p>
   <p>${expense.date}</p>
 

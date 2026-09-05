@@ -29,15 +29,12 @@ expenseForm.addEventListener("submit", function (event) {
 
   const expenseElement = document.createElement("div");
 
-  expenseElement.innerHTML = `
+expenseElement.innerHTML = `
     <p>${expense.description}</p>
-    <p>₹${expense.expense}</p>
-    <p>${expense.category}</p>
-  <p>${expense.date}</p>
-
+    <p>₹${expense.amount}</p>
 `;
 
-  expenseList.appendChild(expenseElement);
+expenseList.appendChild(expenseElement);
 
-  
+  console.log(expenses);
 });
