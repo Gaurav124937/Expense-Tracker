@@ -2,6 +2,8 @@ const addExpenseButton = document.querySelector(".add-expense-button");
 
 const expenseForm = document.querySelector(".expense-form");
 
+const saveExpenseButton = document.querySelector(".save-expense-button");
+
 addExpenseButton.addEventListener("click", function showExpenseForm() {
   expenseForm.classList.toggle("form-hidden");
 });
@@ -26,7 +28,9 @@ expenseForm.addEventListener("submit", function (event) {
   expenses.push(expense);
   console.log(expenses);
 
-  const expenseElement = document.createElement("div");
+
+  
+    const expenseElement = document.createElement("div");
   expenseElement.id = expense.id;
 
   expenseElement.innerHTML = `
@@ -38,32 +42,30 @@ expenseForm.addEventListener("submit", function (event) {
 
 `;
   expenseList.appendChild(expenseElement);
+    totalExpense();
 
-  let totalValue = totalExpense();
-
-  const totalAmount = document.querySelector(".total-expense");
-  totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
-
-  const deleteExpense = expenseElement.querySelector(".delete-expense-button");
-  deleteExpense.addEventListener("click", function () {
-    expenseElement.remove();
-    const index = expenses.findIndex(
-      (expense) => expense.id === expenseElement.id,
+  function deleteExpense() {
+    const deleteExpense = expenseElement.querySelector(
+      ".delete-expense-button",
     );
-    if (index !== -1) {
-      expenses.splice(index, 1);
-    }
-    totalValue = totalExpense();
-    totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
-    console.log(expenses);
-  });
+    deleteExpense.addEventListener("click", function () {
+      expenseElement.remove();
+      const index = expenses.findIndex(
+        (expense) => expense.id === expenseElement.id,
+      );
+      if (index !== -1) {
+        expenses.splice(index, 1);
+      }
 
-  
+      console.log(expenses);
+    });
+  }
+  deleteExpense();
 });
 
 function totalExpense() {
   const totalExpense = expenses.reduce((total, expense) => {
     return total + expense.expense;
   }, 0);
-  return totalExpense;
+  console.log(totalExpense);
 }

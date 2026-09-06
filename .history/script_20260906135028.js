@@ -1,6 +1,10 @@
+const { createElement } = require("react");
+
 const addExpenseButton = document.querySelector(".add-expense-button");
 
 const expenseForm = document.querySelector(".expense-form");
+
+const saveExpenseButton = document.querySelector(".save-expense-button");
 
 addExpenseButton.addEventListener("click", function showExpenseForm() {
   expenseForm.classList.toggle("form-hidden");
@@ -25,7 +29,9 @@ expenseForm.addEventListener("submit", function (event) {
   };
   expenses.push(expense);
   console.log(expenses);
-
+  const amount = document.createElement("div");
+    amount.innerHTML=`
+    <p>${totalValue}</p>` 
   const expenseElement = document.createElement("div");
   expenseElement.id = expense.id;
 
@@ -39,10 +45,7 @@ expenseForm.addEventListener("submit", function (event) {
 `;
   expenseList.appendChild(expenseElement);
 
-  let totalValue = totalExpense();
-
-  const totalAmount = document.querySelector(".total-expense");
-  totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
+   let totalValue= totalExpense();
 
   const deleteExpense = expenseElement.querySelector(".delete-expense-button");
   deleteExpense.addEventListener("click", function () {
@@ -54,16 +57,23 @@ expenseForm.addEventListener("submit", function (event) {
       expenses.splice(index, 1);
     }
     totalValue = totalExpense();
-    totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
     console.log(expenses);
   });
-
   
+  const totalAmount = document.querySelector(".total-expense");
+  totalAmount.addEventListener("click", function(){
+    const amount = document.createElement("div");
+    amount.innerHTML=`
+    <p>${totalValue}</p>` 
+    totalAmount.appendChild(amount);
+  })
 });
+
+
 
 function totalExpense() {
   const totalExpense = expenses.reduce((total, expense) => {
     return total + expense.expense;
   }, 0);
-  return totalExpense;
+  console.log(totalExpense);
 }
