@@ -1,0 +1,91 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.section{
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+    padding: 5px;
+}
+.buttons-grid{
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    gap: 10px;
+    justify-content: center;
+}
+.btn{
+    padding: 10px;
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+    margin: 20px;
+    font-size: 15px;
+    block-size: 40px;
+    color: white;
+    background-color: black;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+.formating{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 75%
+}
+.save-expense-button{
+    padding: 10px;
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+    margin-top: 20px;
+    font-size: 15px;
+    block-size: 40px;
+    color: white;
+    background-color: black;
+    width: 45%;
+}
+.form-hidden{
+    display: none;
+}
+
+.delete-expense-button{
+    padding: 10px;
+    border-radius: 5px;
+    border-color: black;
+    border: 1px solid;
+    margin-top: 20px;
+    font-size: 15px;
+    block-size: 40px;
+    color: white;
+    background-color: black;
+    width: 20%;
+}
+
+.expense-list{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border: 1px solid;
+    gap: 10px;
+    width: 95%;
+}
+.expense-display-card{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    item_height: 100px;
+    width: 10%;
+}
