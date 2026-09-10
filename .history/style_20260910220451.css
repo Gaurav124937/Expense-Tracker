@@ -73,10 +73,7 @@
   padding: 8px;
   border: 1px solid;
   border-radius: 10px;
-  width: 15%;
+  width: 30%;
 }
 
-.expense-text-styling {
-  font-size: 15px;
-  
-}
+,expense-element

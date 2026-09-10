@@ -73,10 +73,11 @@
   padding: 8px;
   border: 1px solid;
   border-radius: 10px;
-  width: 15%;
+  width: 30%;
 }
 
-.expense-text-styling {
+.form-hidden {
   font-size: 15px;
-  
+  font-weight: bold;
+  padding: 5px;
 }

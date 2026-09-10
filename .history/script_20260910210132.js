@@ -10,8 +10,41 @@ const expenses = [];
 getData();
 
 expenses.forEach((expense) => {
-  renderExpense(expense);
+  const expenseList = document.querySelector(".expense-list");
+  const expenseElement = document.createElement("div");
+  expenseElement.id= expense.id;
+  expenseElement.className = "expense-display-card";
+  expenseElement.innerHTML = `
+    <p>${expense.description}</p>
+    <p>₹${expense.expense}</p>
+    <p>${expense.category}</p>
+    <p>${expense.date}</p>
+    <button class="delete-card">delete</button>
+  `;
+  expenseList.appendChild(expenseElement);
+
+const deleteCard = expenseElement.querySelector(".delete-card");
+  deleteCard.addEventListener("click", function () {
+    expenseElement.remove();
+    const index = expenses.findIndex(
+      (expense) => expense.id === expenseElement.id,
+    );
+    if (index !== -1) {
+      expenses.splice(index, 1);
+    }
+    storingData();
+  });
+   
 });
+
+let total = totalExpense();
+const totalSub = document.querySelector(".total-value");
+  totalSub.innerHTML = `<p>TOTAL EXPENSE: ${total}</p>`;
+
+
+
+
+
 
 expenseForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -30,11 +63,15 @@ expenseForm.addEventListener("submit", function (event) {
 
   storingData();
   expenseForm.reset();
-
+  
   renderExpense(expense);
+
+  
+  
 });
 
-function totalExpense() {
+
+function totalExpense() { 
   const totalExpense = expenses.reduce((total, expense) => {
     return total + expense.expense;
   }, 0);
@@ -55,21 +92,23 @@ function getData() {
   console.log(expensesArray);
 }
 
-function renderExpense(expense) {
-  const expenseList = document.querySelector(".expense-list");
-  const expenseElement = document.createElement("div");
-  expenseElement.classList.add("expense-display-card");
+
+
+function renderExpense(expense){
+  
+      const expenseElement = document.createElement("div");
   expenseElement.id = expense.id;
 
   expenseElement.innerHTML = `
-    <p class="expense-text-styling">${expense.description}</p>
-    <p class="expense-text-styling">₹${expense.expense}</p>
-    <p class="expense-text-styling">${expense.category}</p>
-  <p class="expense-text-styling">${expense.date}</p>
+    <p>${expense.description}</p>
+    <p>₹${expense.expense}</p>
+    <p>${expense.category}</p>
+  <p>${expense.date}</p>
   <button class="delete-expense-button">Delete</button>
 
 `;
-  expenseList.appendChild(expenseElement);
+  expenseListSubmit.appendChild(expenseElement);
+
 
   let totalValue = totalExpense();
 
@@ -91,4 +130,4 @@ function renderExpense(expense) {
     totalValue = totalExpense();
     totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
   });
-}
+  }

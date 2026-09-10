@@ -78,5 +78,6 @@
 
 .expense-text-styling {
   font-size: 15px;
-  
+  font-weight: bold;
+  padding: 5px;
 }

@@ -62,10 +62,10 @@ function renderExpense(expense) {
   expenseElement.id = expense.id;
 
   expenseElement.innerHTML = `
-    <p class="expense-text-styling">${expense.description}</p>
-    <p class="expense-text-styling">₹${expense.expense}</p>
-    <p class="expense-text-styling">${expense.category}</p>
-  <p class="expense-text-styling">${expense.date}</p>
+    <p>${expense.description}</p>
+    <p>₹${expense.expense}</p>
+    <p>${expense.category}</p>
+  <p>${expense.date}</p>
   <button class="delete-expense-button">Delete</button>
 
 `;

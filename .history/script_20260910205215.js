@@ -10,8 +10,41 @@ const expenses = [];
 getData();
 
 expenses.forEach((expense) => {
-  renderExpense(expense);
+  const expenseList = document.querySelector(".expense-list");
+  const expenseElement = document.createElement("div");
+  expenseElement.id= expense.id;
+  expenseElement.className = "expense-display-card";
+  expenseElement.innerHTML = `
+    <p>${expense.description}</p>
+    <p>₹${expense.expense}</p>
+    <p>${expense.category}</p>
+    <p>${expense.date}</p>
+    <button class="delete-card">delete</button>
+  `;
+  expenseList.appendChild(expenseElement);
+
+const deleteCard = expenseElement.querySelector(".delete-card");
+  deleteCard.addEventListener("click", function () {
+    expenseElement.remove();
+    const index = expenses.findIndex(
+      (expense) => expense.id === expenseElement.id,
+    );
+    if (index !== -1) {
+      expenses.splice(index, 1);
+    }
+    storingData();
+  });
+   
 });
+
+let total = totalExpense();
+const totalSub = document.querySelector(".total-value");
+  totalSub.innerHTML = `<p>TOTAL EXPENSE: ${total}</p>`;
+
+
+
+
+const expenseListSubmit = document.querySelector(".expense-list-submit");
 
 expenseForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -30,11 +63,20 @@ expenseForm.addEventListener("submit", function (event) {
 
   storingData();
   expenseForm.reset();
+  
 
-  renderExpense(expense);
+  function renderExpense(){
+
+  }
+  
+
+    totalValue = totalExpense();
+    totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
+  });
 });
 
-function totalExpense() {
+
+function totalExpense() { 
   const totalExpense = expenses.reduce((total, expense) => {
     return total + expense.expense;
   }, 0);
@@ -53,42 +95,4 @@ function getData() {
   }
 
   console.log(expensesArray);
-}
-
-function renderExpense(expense) {
-  const expenseList = document.querySelector(".expense-list");
-  const expenseElement = document.createElement("div");
-  expenseElement.classList.add("expense-display-card");
-  expenseElement.id = expense.id;
-
-  expenseElement.innerHTML = `
-    <p class="expense-text-styling">${expense.description}</p>
-    <p class="expense-text-styling">₹${expense.expense}</p>
-    <p class="expense-text-styling">${expense.category}</p>
-  <p class="expense-text-styling">${expense.date}</p>
-  <button class="delete-expense-button">Delete</button>
-
-`;
-  expenseList.appendChild(expenseElement);
-
-  let totalValue = totalExpense();
-
-  const totalAmount = document.querySelector(".total-expense");
-  totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
-
-  const deleteExpense = expenseElement.querySelector(".delete-expense-button");
-  deleteExpense.addEventListener("click", function () {
-    expenseElement.remove();
-    const index = expenses.findIndex(
-      (expense) => expense.id === expenseElement.id,
-    );
-    if (index !== -1) {
-      expenses.splice(index, 1);
-    }
-
-    storingData();
-
-    totalValue = totalExpense();
-    totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
-  });
 }
