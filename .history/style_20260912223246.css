@@ -84,8 +84,7 @@
   font-size: 15px;
   color: white;
   font-weight: bold;
-  text-overflow: ellipsis;
-  overflow-wrap: break-word;
+  
 }
 
 .delete-expense-button {
@@ -105,12 +104,9 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-height: 0;
-  overflow: auto;
 }
 .delete-expense {
   margin-top: auto;
-  flecx-shrink: 0;
 }
 
 body {

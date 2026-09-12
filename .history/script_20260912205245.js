@@ -72,9 +72,8 @@ function renderExpense(expense) {
   <p class="expense-text-styling">${expense.date}</p>
   `;
   expenseElement.appendChild(infoDiv);
+  
 
-  const deleteButtonDiv = document.createElement("div");
-  deleteButtonDiv.classList.add("delete-expense");
   deleteButtonDiv.innerHTML=`
   <button class="delete-expense-button">Delete</button>`;
 

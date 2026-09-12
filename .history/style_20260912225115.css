@@ -105,12 +105,10 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-height: 0;
-  overflow: auto;
+  min
 }
 .delete-expense {
   margin-top: auto;
-  flecx-shrink: 0;
 }
 
 body {

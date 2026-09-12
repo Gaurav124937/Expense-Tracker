@@ -58,13 +58,13 @@ function getData() {
 function renderExpense(expense) {
   const expenseList = document.querySelector(".expense-list");
   
-  
+  const deleteButtonDiv = document.createElement("div");
   const expenseElement = document.createElement("div");
   expenseElement.classList.add("expense-display-card");
   expenseElement.id = expense.id;
   
   const infoDiv = document.createElement("div");
-  infoDiv.classList.add("expense-info");
+  info
   infoDiv.innerHTML = `
     <p class="expense-text-styling">${expense.description}</p>
     <p class="expense-text-styling">₹${expense.expense}</p>
@@ -73,8 +73,6 @@ function renderExpense(expense) {
   `;
   expenseElement.appendChild(infoDiv);
 
-  const deleteButtonDiv = document.createElement("div");
-  deleteButtonDiv.classList.add("delete-expense");
   deleteButtonDiv.innerHTML=`
   <button class="delete-expense-button">Delete</button>`;
 
