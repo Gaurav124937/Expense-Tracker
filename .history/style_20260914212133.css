@@ -119,7 +119,6 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   overflow-wrap: break-word;
-  line-clamp: 3;
   -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
