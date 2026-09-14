@@ -20,10 +20,7 @@ expenseForm.addEventListener("submit", function (event) {
   const category = document.querySelector("#category").value;
   const date = document.querySelector("#date").value;
 
-  if( amount<=0 || descript.trim() === "" || category == "" || date === "" ){
-    alert("please enter all details carefully");
-    return;
-  } ;
+  if
   const expense = {
     id: crypto.randomUUID(),
     expense: amount,
