@@ -116,17 +116,12 @@ body {
 }
 
 .expense-description {
-  text-overflow: ellipsis;
-  overflow: hidden;
+  /* text-overflow: ellipsis;
   overflow-wrap: break-word;
-  -webkit-line-clamp: 3;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; */
 }
 
-.expense-description.expanded {
-  display: block;
-  -webkit-line-clamp: unset;
-  overflow: visible;
+.expanded {
   overflow-wrap: break-word;
+  -webkit-line-clamp: 3;
 }

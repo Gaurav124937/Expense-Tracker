@@ -84,6 +84,8 @@
   font-size: 15px;
   color: white;
   font-weight: bold;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 .delete-expense-button {
@@ -115,18 +117,3 @@ body {
   background-color: rgba(255, 94, 0, 0.288);
 }
 
-.expense-description {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 3;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-}
-
-.expense-description.expanded {
-  display: block;
-  -webkit-line-clamp: unset;
-  overflow: visible;
-  overflow-wrap: break-word;
-}

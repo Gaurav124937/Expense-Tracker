@@ -57,11 +57,12 @@ function getData() {
 
 function renderExpense(expense) {
   const expenseList = document.querySelector(".expense-list");
-
+  
+  
   const expenseElement = document.createElement("div");
   expenseElement.classList.add("expense-display-card");
   expenseElement.id = expense.id;
-
+  
   const infoDiv = document.createElement("div");
   infoDiv.classList.add("expense-info");
   infoDiv.innerHTML = `
@@ -74,18 +75,17 @@ function renderExpense(expense) {
 
   const deleteButtonDiv = document.createElement("div");
   deleteButtonDiv.classList.add("delete-expense");
-  deleteButtonDiv.innerHTML = `
+  deleteButtonDiv.innerHTML=`
   <button class="delete-expense-button">Delete</button>`;
 
   expenseElement.appendChild(deleteButtonDiv);
 
   expenseList.appendChild(expenseElement);
-  const descriptionElement = expenseElement.querySelector(
-    ".expense-description",
-  );
+ document.querySelector(".expense-description");
   descriptionElement.addEventListener("click", () => {
     descriptionElement.classList.toggle("expanded");
-  });
+});
+
 
   let totalValue = totalExpense();
 
