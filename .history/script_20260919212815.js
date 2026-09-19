@@ -191,11 +191,7 @@ function filterExpenses() {
 
   const expenseList = document.querySelector(".expense-list");
   expenseList.innerHTML = "";
-
-  if (filteredExpenses.length === 0) {
-    expenseList.innerHTML = "<p>No expenses found.</p>";
-    return;
-  }
+  
 
   filteredExpenses.forEach((expense) => {
     renderExpense(expense);
@@ -209,7 +205,8 @@ function updateTotal() {
   totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
 }
 
-//CLEARING FILTER
+
+//CLEARING FILTER 
 const clearFiltersButton = document.querySelector(".clear-filters");
 
 clearFiltersButton.addEventListener("click", function () {
