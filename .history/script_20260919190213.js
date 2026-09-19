@@ -176,26 +176,11 @@ searchInput.addEventListener("input", function () {
 });
 
 const categoryFilter = document.querySelector(".category-filter");
-categoryFilter.addEventListener("change", function () {
-  const selectedCategory = categoryFilter.value;
 
-  const filteredExpenses = expenses.filter((expense) => {
-    if (selectedCategory === "all") {
-      return true;
-    }
-
-    return expense.category.toLowerCase() === selectedCategory;
-  });
-
-  const expenseList = document.querySelector(".expense-list");
-  expenseList.innerHTML = "";
-
-  filteredExpenses.forEach((expense) => {
-    renderExpense(expense);
-  });
-});
 function updateTotal() {
   const totalAmount = document.querySelector(".total-expense");
 
   totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
 }
+
+

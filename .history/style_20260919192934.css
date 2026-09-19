@@ -160,7 +160,7 @@ body {
   padding: 10px;
 }
 .category-filter {
-  width: 25%;
+  width: 30%;
   font-size: 13px;
   padding: 6px;
   margin-bottom: 20px;
@@ -181,7 +181,7 @@ body {
   padding: 5px;
 }
 .filter-form-label {
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: bold;
   margin-bottom: 5px;
-  color: rgb(0, 0, 0);
 }

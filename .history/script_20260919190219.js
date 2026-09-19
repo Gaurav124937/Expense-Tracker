@@ -199,3 +199,5 @@ function updateTotal() {
 
   totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
 }
+
+

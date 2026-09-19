@@ -184,7 +184,10 @@ categoryFilter.addEventListener("change", function () {
       return true;
     }
 
-    return expense.category.toLowerCase() === selectedCategory;
+    return expense.category.toLowerCase() 
+    
+    
+    === selectedCategory;
   });
 
   const expenseList = document.querySelector(".expense-list");
@@ -199,3 +202,5 @@ function updateTotal() {
 
   totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
 }
+
+
