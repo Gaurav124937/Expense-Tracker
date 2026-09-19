@@ -61,11 +61,9 @@ expenseForm.addEventListener("submit", function (event) {
     <p class="expense-text-styling">${expenseToSave.category}</p>
   <p class="expense-text-styling">${expenseToSave.date}</p>
   `;
-    document.querySelector(".total-expense").innerHTML =
-      `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
-
-    editingExpenseId = null;
   }
+
+  
 });
 
 function totalExpense() {

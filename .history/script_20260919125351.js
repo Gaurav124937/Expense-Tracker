@@ -36,36 +36,25 @@ expenseForm.addEventListener("submit", function (event) {
   if (editingExpenseId == null) {
     expenses.push(expense);
     storingData();
-    expenseForm.reset();
+  expenseForm.reset();
 
-    renderExpense(expense);
-  } else {
+  renderExpense(expense);
+  }
+  else{
     const index = expenses.findIndex(
-      (expense) => expense.id === editingExpenseId,
+      (expense) => expense.id === editingExpenseId.id,
     );
     const expenseToSave = expenses[index];
     if (index !== -1) {
-      expenseToSave.expense = amount;
-      expenseToSave.description = descript;
-      expenseToSave.category = category;
-      expenseToSave.date = date;
-    }
+      expense.id = editingExpenseId;
+      expense.expense= expenseToSave.expense; 
+      expense.description= expenseToSave.description; 
+      expense.category= expenseToSave.category; 
+      expense.expense= expenseToSave.expense; 
 
-    storingData();
-    expenseForm.reset();
-    const expenseElement = document.getElementById(editingExpenseId);
-    const infoDiv = expenseElement.querySelector(".expense-info");
-    infoDiv.innerHTML = `
-    <p class="expense-text-styling expense-description ">${expenseToSave.description}</p>
-    <p class="expense-text-styling">₹${expenseToSave.expense}</p>
-    <p class="expense-text-styling">${expenseToSave.category}</p>
-  <p class="expense-text-styling">${expenseToSave.date}</p>
-  `;
-    document.querySelector(".total-expense").innerHTML =
-      `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
-
-    editingExpenseId = null;
   }
+}
+  
 });
 
 function totalExpense() {
@@ -144,6 +133,8 @@ function renderExpense(expense) {
     totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
   });
 
+
+  
   const editExpense = expenseElement.querySelector(".edit-expense-button");
   editExpense.addEventListener("click", function () {
     const index = expenses.findIndex(

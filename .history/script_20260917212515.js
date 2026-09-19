@@ -13,8 +13,6 @@ expenses.forEach((expense) => {
   renderExpense(expense);
 });
 
-let editingExpenseId = null;
-
 expenseForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const amount = Number(document.querySelector("#expense").value);
@@ -33,39 +31,12 @@ expenseForm.addEventListener("submit", function (event) {
     category: category,
     date: date,
   };
-  if (editingExpenseId == null) {
-    expenses.push(expense);
-    storingData();
-    expenseForm.reset();
+  expenses.push(expense);
 
-    renderExpense(expense);
-  } else {
-    const index = expenses.findIndex(
-      (expense) => expense.id === editingExpenseId,
-    );
-    const expenseToSave = expenses[index];
-    if (index !== -1) {
-      expenseToSave.expense = amount;
-      expenseToSave.description = descript;
-      expenseToSave.category = category;
-      expenseToSave.date = date;
-    }
+  storingData();
+  expenseForm.reset();
 
-    storingData();
-    expenseForm.reset();
-    const expenseElement = document.getElementById(editingExpenseId);
-    const infoDiv = expenseElement.querySelector(".expense-info");
-    infoDiv.innerHTML = `
-    <p class="expense-text-styling expense-description ">${expenseToSave.description}</p>
-    <p class="expense-text-styling">₹${expenseToSave.expense}</p>
-    <p class="expense-text-styling">${expenseToSave.category}</p>
-  <p class="expense-text-styling">${expenseToSave.date}</p>
-  `;
-    document.querySelector(".total-expense").innerHTML =
-      `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
-
-    editingExpenseId = null;
-  }
+  renderExpense(expense);
 });
 
 function totalExpense() {
@@ -106,14 +77,14 @@ function renderExpense(expense) {
   `;
   expenseElement.appendChild(infoDiv);
 
-  const actionDiv = document.createElement("div");
+  const actionnDiv = document.createElement("div");
   actionDiv.classList.add("expense-actions");
-  actionDiv.innerHTML = `
+  deleteButtonDiv.innerHTML = `
   <button class="delete-expense-button">Delete</button>
   <button class="edit-expense-button">Edit</button>
   `;
 
-  expenseElement.appendChild(actionDiv);
+  expenseElement.appendChild(deleteButtonDiv);
 
   expenseList.appendChild(expenseElement);
   const descriptionElement = expenseElement.querySelector(
@@ -140,24 +111,13 @@ function renderExpense(expense) {
 
     storingData();
 
+    const editExpense = expenseElement.querySelector(".edit-expense-button");
+    editExpense.addEventListener("click", function () {});
+
     totalValue = totalExpense();
     totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
   });
-
-  const editExpense = expenseElement.querySelector(".edit-expense-button");
-  editExpense.addEventListener("click", function () {
-    const index = expenses.findIndex(
-      (expense) => expense.id === expenseElement.id,
-    );
-    if (index !== -1) {
-      const expenseToEdit = expenses[index];
-
-      editingExpenseId = expenseToEdit.id;
-
-      document.querySelector("#expense").value = expenseToEdit.expense;
-      document.querySelector("#description").value = expenseToEdit.description;
-      document.querySelector("#category").value = expenseToEdit.category;
-      document.querySelector("#date").value = expenseToEdit.date;
-    }
-  });
 }
+ 
+
+

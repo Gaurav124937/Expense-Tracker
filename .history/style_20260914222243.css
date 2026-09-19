@@ -121,7 +121,7 @@
   min-height: 0;
   overflow: auto;
 }
-.expense-actions {
+.delete-expense {
   display: flex;
   flex-direction: row;
   gap: 10px;

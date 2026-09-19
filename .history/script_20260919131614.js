@@ -54,17 +54,13 @@ expenseForm.addEventListener("submit", function (event) {
     storingData();
     expenseForm.reset();
     const expenseElement = document.getElementById(editingExpenseId);
-    const infoDiv = expenseElement.querySelector(".expense-info");
+    const infoDiv = ex.querySelector(".expense-info");
     infoDiv.innerHTML = `
     <p class="expense-text-styling expense-description ">${expenseToSave.description}</p>
     <p class="expense-text-styling">₹${expenseToSave.expense}</p>
     <p class="expense-text-styling">${expenseToSave.category}</p>
   <p class="expense-text-styling">${expenseToSave.date}</p>
   `;
-    document.querySelector(".total-expense").innerHTML =
-      `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
-
-    editingExpenseId = null;
   }
 });
 

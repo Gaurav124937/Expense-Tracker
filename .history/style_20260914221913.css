@@ -89,7 +89,7 @@
 .delete-expense-button {
   padding: 5px;
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
   border-color: black;
   border: 1px solid;
   margin-top: 20px;
@@ -99,21 +99,6 @@
   background-color: rgba(255, 0, 0, 0.761);
 }
 
-.edit-expense-button {
-  padding: 5px;
-  border-radius: 5px;
-  width: 50%;
-  border-color: black;
-  border: 1px solid;
-  margin-top: 20px;
-  font-size: 15px;
-  block-size: 30px;
-  color: white;
-  background-color: rgb(0, 0, 0);
-}
-
-
-
 .expense-info {
   display: flex;
   flex-direction: column;
@@ -121,12 +106,10 @@
   min-height: 0;
   overflow: auto;
 }
-.expense-actions {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+.delete-expense {
   margin-top: auto;
   flex-shrink: 0;
+  dis
 }
 
 body {

@@ -109,7 +109,7 @@
   font-size: 15px;
   block-size: 30px;
   color: white;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(255, 0, 0, 0.761);
 }
 
 
@@ -121,12 +121,13 @@
   min-height: 0;
   overflow: auto;
 }
-.expense-actions {
+.delete-expense {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  felex-direction: column;
   margin-top: auto;
-  flex-shrink: 0;
+  /*flex-shrink: 0*/
+  ;
+  ;
 }
 
 body {

@@ -41,30 +41,19 @@ expenseForm.addEventListener("submit", function (event) {
     renderExpense(expense);
   } else {
     const index = expenses.findIndex(
-      (expense) => expense.id === editingExpenseId,
+      (expense) => expense.id === editingExpenseId.id,
     );
     const expenseToSave = expenses[index];
     if (index !== -1) {
-      expenseToSave.expense = amount;
-      expenseToSave.description = descript;
-      expenseToSave.category = category;
-      expenseToSave.date = date;
+     
+   expenseToSave.expense = amount;
+    expenseToSave.description;
+     expenseToSave.category 
+     expenseToSave.date;
     }
 
     storingData();
     expenseForm.reset();
-    const expenseElement = document.getElementById(editingExpenseId);
-    const infoDiv = expenseElement.querySelector(".expense-info");
-    infoDiv.innerHTML = `
-    <p class="expense-text-styling expense-description ">${expenseToSave.description}</p>
-    <p class="expense-text-styling">₹${expenseToSave.expense}</p>
-    <p class="expense-text-styling">${expenseToSave.category}</p>
-  <p class="expense-text-styling">${expenseToSave.date}</p>
-  `;
-    document.querySelector(".total-expense").innerHTML =
-      `<p>TOTAL EXPENSE: ${totalExpense()}</p>`;
-
-    editingExpenseId = null;
   }
 });
 
