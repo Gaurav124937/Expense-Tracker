@@ -155,7 +155,8 @@ function renderExpense(expense) {
       document.querySelector("#category").value = expenseToEdit.category;
       document.querySelector("#date").value = expenseToEdit.date;
     }
-    expenseForm.classList.toggle("form-hidden");
+      expenseForm.classList.toggle("form-hidden");
+    
   });
 }
 

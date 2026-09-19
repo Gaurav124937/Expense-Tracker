@@ -148,9 +148,8 @@ body {
   overflow: visible;
   overflow-wrap: break-word;
 }
-.expense-search {
-  width: 50%;
+.expense-search{
+  width: 80%;
   font-size: 15px;
-  padding: 6px;
-  margin-bottom: 20px;
+
 }

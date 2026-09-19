@@ -123,7 +123,10 @@ function renderExpense(expense) {
     descriptionElement.classList.toggle("expanded");
   });
 
-  updateTotal();
+  let totalValue = totalExpense();
+
+  const totalAmount = document.querySelector(".total-expense");
+  totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
 
   const deleteExpense = expenseElement.querySelector(".delete-expense-button");
   deleteExpense.addEventListener("click", function () {
@@ -137,7 +140,8 @@ function renderExpense(expense) {
 
     storingData();
 
-    updateTotal();
+    totalValue = totalExpense();
+    totalAmount.innerHTML = `<p>TOTAL EXPENSE: ${totalValue}</p>`;
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -155,7 +159,6 @@ function renderExpense(expense) {
       document.querySelector("#category").value = expenseToEdit.category;
       document.querySelector("#date").value = expenseToEdit.date;
     }
-    expenseForm.classList.toggle("form-hidden");
   });
 }
 
@@ -174,7 +177,6 @@ searchInput.addEventListener("input", function () {
     renderExpense(expense);
   });
 });
-
 function updateTotal() {
   const totalAmount = document.querySelector(".total-expense");
 
