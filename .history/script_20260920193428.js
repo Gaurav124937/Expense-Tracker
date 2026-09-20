@@ -247,4 +247,5 @@ sortExpenses.addEventListener("change", function () {
   sortedExpenses.forEach((expense) => {
     renderExpense(expense);
   });
+  console.log(sortedExpenses);
 });

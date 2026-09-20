@@ -241,10 +241,5 @@ sortExpenses.addEventListener("change", function () {
     sortedExpenses.sort((a, b) => new Date(a.date) - new Date(b.date));
   }
 
-  const expenseList = document.querySelector(".expense-list");
-  expenseList.innerHTML = "";
-
-  sortedExpenses.forEach((expense) => {
-    renderExpense(expense);
-  });
+  console.log(sortedExpenses);
 });

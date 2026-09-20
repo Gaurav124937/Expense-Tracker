@@ -224,27 +224,13 @@ sortExpenses.addEventListener("change", function () {
   const selectedSort = sortExpenses.value;
 
   const sortedExpenses = [...expenses];
+  let newSortedExpenses =[];
 
   if (selectedSort === "highest") {
-    sortedExpenses.sort((a, b) => b.expense - a.expense);
+     newSortedExpenses = sortedExpenses.sort((a, b) => b.expense - a.expense);
+  
+
   }
 
-  if (selectedSort === "lowest") {
-    sortedExpenses.sort((a, b) => a.expense - b.expense);
-  }
-
-  if (selectedSort === "newest") {
-    sortedExpenses.sort((a, b) => new Date(b.date) - new Date(a.date));
-  }
-
-  if (selectedSort === "oldest") {
-    sortedExpenses.sort((a, b) => new Date(a.date) - new Date(b.date));
-  }
-
-  const expenseList = document.querySelector(".expense-list");
-  expenseList.innerHTML = "";
-
-  sortedExpenses.forEach((expense) => {
-    renderExpense(expense);
-  });
+  }) console.log(sortedExpenses);
 });

@@ -242,9 +242,10 @@ sortExpenses.addEventListener("change", function () {
   }
 
   const expenseList = document.querySelector(".expense-list");
-  expenseList.innerHTML = "";
+expenseList.innerHTML = "";
 
-  sortedExpenses.forEach((expense) => {
-    renderExpense(expense);
-  });
+sortedExpenses.forEach((expense) => {
+  renderExpense(expense);
+});
+  console.log(sortedExpenses);
 });

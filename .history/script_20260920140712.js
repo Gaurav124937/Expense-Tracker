@@ -230,21 +230,16 @@ sortExpenses.addEventListener("change", function () {
   }
 
   if (selectedSort === "lowest") {
-    sortedExpenses.sort((a, b) => a.expense - b.expense);
-  }
+  sortedExpenses.sort((a, b) => a.expense - b.expense);
+}
 
-  if (selectedSort === "newest") {
-    sortedExpenses.sort((a, b) => new Date(b.date) - new Date(a.date));
-  }
+if (selectedSort === "newest") {
+  sortedExpenses.sort((a, b) => new Date(b.date) - new Date(a.date));
+}
 
-  if (selectedSort === "oldest") {
-    sortedExpenses.sort((a, b) => new Date(a.date) - new Date(b.date));
-  }
+if (selectedSort === "oldest") {
+  sortedExpenses.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
 
-  const expenseList = document.querySelector(".expense-list");
-  expenseList.innerHTML = "";
-
-  sortedExpenses.forEach((expense) => {
-    renderExpense(expense);
-  });
+  console.log(sortedExpenses);
 });
