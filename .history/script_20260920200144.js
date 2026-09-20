@@ -243,5 +243,5 @@ clearFiltersButton.addEventListener("click", function () {
   categoryFilter.value = "all";
   sortExpenses.value="latest";
 
-  updateExpenseList();
+  
 });

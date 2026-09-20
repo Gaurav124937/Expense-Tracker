@@ -175,7 +175,6 @@ categoryFilter.addEventListener("change", updateExpenseList);
 const sortExpenses = document.querySelector(".sort-expenses");
 sortExpenses.addEventListener("change", updateExpenseList);
 
-
 //FUNCTION FOR FILTER EXPENSES BY DESCRIPTION, CATEGORY AND SORTING
 function updateExpenseList() {
   const searchText = searchInput.value.toLowerCase();
@@ -194,10 +193,10 @@ function updateExpenseList() {
     return matchesSearch && matchesCategory;
   });
 
-  if(selectedSort === "latest"){
+  if (selectedSort === "latest") {
     expenses.forEach((expense) => {
-    renderExpense(expense);
-  });
+      renderExpense(expense);
+    });
   }
 
   if (selectedSort === "highest") {
@@ -241,7 +240,6 @@ const clearFiltersButton = document.querySelector(".clear-filters");
 clearFiltersButton.addEventListener("click", function () {
   searchInput.value = "";
   categoryFilter.value = "all";
-  sortExpenses.value="latest";
 
-  updateExpenseList();
+  filterExpenses();
 });

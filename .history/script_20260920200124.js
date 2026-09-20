@@ -195,7 +195,7 @@ function updateExpenseList() {
   });
 
   if(selectedSort === "latest"){
-    expenses.forEach((expense) => {
+    .forEach((expense) => {
     renderExpense(expense);
   });
   }
@@ -243,5 +243,5 @@ clearFiltersButton.addEventListener("click", function () {
   categoryFilter.value = "all";
   sortExpenses.value="latest";
 
-  updateExpenseList();
+  filterExpenses();
 });
