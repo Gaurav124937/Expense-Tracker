@@ -175,6 +175,7 @@ categoryFilter.addEventListener("change", updateExpenseList);
 const sortExpenses = document.querySelector(".sort-expenses");
 sortExpenses.addEventListener("change", updateExpenseList);
 
+
 //FUNCTION FOR FILTER EXPENSES BY DESCRIPTION, CATEGORY AND SORTING
 function updateExpenseList() {
   const searchText = searchInput.value.toLowerCase();
