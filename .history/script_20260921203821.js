@@ -13,8 +13,6 @@ expenses.forEach((expense) => {
   renderExpense(expense);
 });
 
-updateTransactionCount();
-
 let editingExpenseId = null;
 
 // FUNCTION WORKS ON SUBMITTING THE FORM
@@ -72,8 +70,6 @@ expenseForm.addEventListener("submit", function (event) {
 
     editingExpenseId = null;
   }
-
-  updateTransactionCount();
 });
 
 //FUNCTION TO FIND TOTAL EXPENSE
@@ -149,7 +145,6 @@ function renderExpense(expense) {
     storingData();
 
     updateTotal();
-    updateTransactionCount();
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -255,6 +250,6 @@ function updateTransactionCount() {
   const transactionCount = document.querySelector(".transaction-count");
   transactionCount.innerHTML = `
   <h3>Total Transactions</h3>
-  <p>${count}</p>
+        <p>${count}</p>
   `;
 }

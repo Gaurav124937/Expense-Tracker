@@ -72,8 +72,6 @@ expenseForm.addEventListener("submit", function (event) {
 
     editingExpenseId = null;
   }
-
-  updateTransactionCount();
 });
 
 //FUNCTION TO FIND TOTAL EXPENSE
@@ -149,7 +147,6 @@ function renderExpense(expense) {
     storingData();
 
     updateTotal();
-    updateTransactionCount();
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");

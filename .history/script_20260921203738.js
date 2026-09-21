@@ -13,8 +13,6 @@ expenses.forEach((expense) => {
   renderExpense(expense);
 });
 
-updateTransactionCount();
-
 let editingExpenseId = null;
 
 // FUNCTION WORKS ON SUBMITTING THE FORM
@@ -26,7 +24,7 @@ expenseForm.addEventListener("submit", function (event) {
   const date = document.querySelector("#date").value;
 
   if (amount <= 0 || descript.trim() === "" || category == "" || date === "") {
-    alert("please enter all details carefully");
+    alert("please enter all details carefully"); 
     return;
   }
   const expense = {
@@ -72,8 +70,6 @@ expenseForm.addEventListener("submit", function (event) {
 
     editingExpenseId = null;
   }
-
-  updateTransactionCount();
 });
 
 //FUNCTION TO FIND TOTAL EXPENSE
@@ -149,7 +145,6 @@ function renderExpense(expense) {
     storingData();
 
     updateTotal();
-    updateTransactionCount();
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -180,6 +175,7 @@ categoryFilter.addEventListener("change", updateExpenseList);
 const sortExpenses = document.querySelector(".sort-expenses");
 sortExpenses.addEventListener("change", updateExpenseList);
 
+
 //FUNCTION FOR FILTER EXPENSES BY DESCRIPTION, CATEGORY AND SORTING
 function updateExpenseList() {
   const searchText = searchInput.value.toLowerCase();
@@ -198,10 +194,10 @@ function updateExpenseList() {
     return matchesSearch && matchesCategory;
   });
 
-  if (selectedSort === "latest") {
+  if(selectedSort === "latest"){
     expenses.forEach((expense) => {
-      renderExpense(expense);
-    });
+    renderExpense(expense);
+  });
   }
 
   if (selectedSort === "highest") {
@@ -245,16 +241,14 @@ const clearFiltersButton = document.querySelector(".clear-filters");
 clearFiltersButton.addEventListener("click", function () {
   searchInput.value = "";
   categoryFilter.value = "all";
-  sortExpenses.value = "latest";
+  sortExpenses.value="latest";
 
   updateExpenseList();
 });
 
-function updateTransactionCount() {
+function updateTransactionCount(){
   const count = expenses.length;
   const transactionCount = document.querySelector(".transaction-count");
-  transactionCount.innerHTML = `
-  <h3>Total Transactions</h3>
-  <p>${count}</p>
-  `;
+  transaction
+
 }
