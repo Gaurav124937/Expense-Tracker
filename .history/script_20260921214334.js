@@ -155,7 +155,7 @@ function renderExpense(expense) {
     updateTotal();
     updateTransactionCount();
     updateDailyExpense();
-    updateMonthlyExpense();
+    us
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -290,7 +290,7 @@ function updateMonthlyExpense() {
   const todayDate = year + "-" + month;
   let sum = 0;
   expenses.forEach((expense) => {
-    if (expense.date.slice(0, 7) === todayDate) {
+    if ((expense.date).slice(0,7) === todayDate) {
       sum += expense.expense;
     }
   });

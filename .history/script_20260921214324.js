@@ -77,7 +77,7 @@ expenseForm.addEventListener("submit", function (event) {
 
   updateTransactionCount();
   updateDailyExpense();
-  updateMonthlyExpense();
+  updateMonthlyExpense()
 });
 
 //FUNCTION TO FIND TOTAL EXPENSE
@@ -155,7 +155,6 @@ function renderExpense(expense) {
     updateTotal();
     updateTransactionCount();
     updateDailyExpense();
-    updateMonthlyExpense();
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -290,7 +289,7 @@ function updateMonthlyExpense() {
   const todayDate = year + "-" + month;
   let sum = 0;
   expenses.forEach((expense) => {
-    if (expense.date.slice(0, 7) === todayDate) {
+    if ((expense.date).slice(0,7) === todayDate) {
       sum += expense.expense;
     }
   });

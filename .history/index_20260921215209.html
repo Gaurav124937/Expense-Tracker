@@ -55,12 +55,12 @@
         </select>
       </div>
       <div>
-        <button class="btn">Clear Filters</button>
+        <button class="clear-filters">Clear Filters</button>
       </div>
     </div>
     <div class="main-container">
       <div class="expense-card-sort">
-        <select class="sort-expenses sort-expense-dropdown">
+        <select class="sort-expenses">
           <option value="latest">Newly-Added</option>
           <option value="newest">Newest First</option>
           <option value="oldest">Oldest First</option>
@@ -87,6 +87,7 @@
         <div class="formating">
           <label for="category">Select category</label>
           <select id="category" name="category">
+            <option value="all">All</option>
             <option value="food">Food</option>
             <option value="petrol">Petrol</option>
             <option value="travel">Travel</option>

@@ -14,10 +14,10 @@
   border: 1px solid #ddd;
   border-radius: 12px;
   background: white;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 .buttons-grid {
-  display: flex;
+   display: flex;
   justify-content: center;
   gap: 12px;
   margin: 20px 0;
@@ -26,7 +26,7 @@
 .btn {
   padding: 10px 20px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom :10px;
   border: none;
   font-size: 15px;
   cursor: pointer;
@@ -62,12 +62,10 @@
 }
 
 .main-container {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  width: 100%;
-  box-sizing: border-box;
-  background: white;
+  padding: 10px;
+  border: 5px solid;
+  gap: 10px;
+  width: 98%;
 }
 
 .expense-list-view {
@@ -101,7 +99,8 @@
   padding: 5px;
   border-radius: 5px;
   width: 50%;
-  border: none;
+  border-color: black;
+  border: 1px solid #ddd;
   margin-top: 20px;
   font-size: 15px;
   block-size: 30px;
@@ -113,7 +112,8 @@
   padding: 5px;
   border-radius: 5px;
   width: 50%;
-  border: none;
+  border-color: black;
+  border: 1px solid;
   margin-top: 20px;
   font-size: 15px;
   block-size: 30px;
@@ -159,7 +159,6 @@ body {
 }
 .expense-search {
   width: 50%;
-  margin: 0;
   font-size: 13px;
   padding: 6px;
   margin-bottom: 10px;
@@ -174,22 +173,23 @@ body {
   font-size: 13px;
   padding: 6px;
   margin-bottom: 20px;
-  margin: 0;
 }
 .filter-container {
   display: flex;
   flex-direction: column;
-  padding: 15px 0;
-  gap: 15px;
+  padding: 5px;
+  gap: 5px;
 }
-
-.search-filter-container,
+.search-filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
 .category-filter-container {
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 5px;
 }
-
 .filter-form-label {
   font-size: 18px;
   margin-bottom: 5px;
@@ -200,12 +200,4 @@ body {
   margin-left: 10px;
   font-size: 13px;
   width: 20%;
-}
-.sort-expense-dropdown {
-  color: white;
-  background-color: black;
-  padding: 4px;
-  font-size: 13px;
-  border-radius: 5px;
-  border: none;
 }
