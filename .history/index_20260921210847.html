@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <h1>EXPENSE TRACKER</h1>
+
+  <div class="grid">
+    <section class="section">
+      <h3>Total Spend</h3>
+      <p>₹0</p>
+    </section>
+
+    <section class="section">
+      <h3>Avg Expense</h3>
+      <p>₹0</p>
+    </section>
+
+    <section class="section dailyxpense">
+      
+    </section>
+
+    <section class="section transaction-count"></section>
+  </div>
+
+  <div class="buttons-grid">
+    <button class="btn add-expense-button">Add Expense</button>
+    <button class="btn manage-expense-button">Manage expense</button>
+  </div>
+
+  <div class="filter-container">
+    <div class="search-filter-container">
+      <label class="filter-form-label" for="expense-search">Search expenses:</label>
+      <input type="text" class="expense-search" placeholder="Search expenses by description..." />
+    </div>
+    <div class="category-filter-container">
+      <label class="filter-form-label" for="category">Filter by category:</label>
+      <select class="category-filter" name="category">
+        <option value="all">All</option>
+        <option value="food">Food</option>
+        <option value="petrol">Petrol</option>
+        <option value="travel">Travel</option>
+        <option value="shopping">Shopping</option>
+        <option value="transport">Transport</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <button class="clear-filters">Clear Filters</button>
+    </div>
+  </div>
+  <div class="main-container">
+    <div class="expense-card-sort">
+      <select class="sort-expenses">
+        <option value="latest">Newly-Added</option>
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="highest">Highest Amount</option>
+        <option value="lowest">Lowest Amount</option>
+      </select>
+    </div>
+    <div class="expense-list expense-list-view"></div>
+  </div>
+  <form method="post" class="expense-form form-hidden">
+    <div class="form">
+      <p>ADD YOUR DETAILS</p>
+
+      <div class="formating">
+        <label for="expense">Enter amount</label>
+        <input type="number" id="expense" name="expense" />
+      </div>
+
+      <div class="formating">
+        <label for="description">Enter description</label>
+        <input type="text" id="description" name="description" />
+      </div>
+
+      <div class="formating">
+        <label for="category">Select category</label>
+        <select id="category" name="category">
+          <option value="all">All</option>
+          <option value="food">Food</option>
+          <option value="petrol">Petrol</option>
+          <option value="travel">Travel</option>
+          <option value="shopping">Shopping</option>
+          <option value="transport">Transport</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="formating">
+        <label for="date">Enter date</label>
+        <input type="date" id="date" name="date" />
+      </div>
+
+      <div class="formating">
+        <button class="save-expense-button" type="submit">
+          Save expense
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="total-expense"></div>
+</body>
+
+</html>

@@ -14,7 +14,6 @@ expenses.forEach((expense) => {
 });
 
 updateTransactionCount();
-updateDailyExpense();
 
 let editingExpenseId = null;
 
@@ -75,7 +74,6 @@ expenseForm.addEventListener("submit", function (event) {
   }
 
   updateTransactionCount();
-  updateDailyExpense();
 });
 
 //FUNCTION TO FIND TOTAL EXPENSE
@@ -152,7 +150,6 @@ function renderExpense(expense) {
 
     updateTotal();
     updateTransactionCount();
-    updateDailyExpense();
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -270,13 +267,15 @@ function updateDailyExpense() {
   const todayDate = year + "-" + month + "-" + day;
   let sum = 0;
   expenses.forEach((expense) => {
+    
     if (expense.date === todayDate) {
       sum += expense.expense;
     }
-  });
-  const dailyExpense = document.querySelector(".daily-expense");
-  dailyExpense.innerHTML = `
+    const dailyExpense = document.querySelector(".daily-expense");
+    dailyExpense.innerHTML = `
     <h3>Daily Expense</h3>
     <p>${sum}</p>
     `;
+  });
 }
+updateDailyExpense();

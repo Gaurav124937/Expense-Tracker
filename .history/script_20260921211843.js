@@ -273,10 +273,6 @@ function updateDailyExpense() {
     if (expense.date === todayDate) {
       sum += expense.expense;
     }
+    
   });
-  const dailyExpense = document.querySelector(".daily-expense");
-  dailyExpense.innerHTML = `
-    <h3>Daily Expense</h3>
-    <p>${sum}</p>
-    `;
 }

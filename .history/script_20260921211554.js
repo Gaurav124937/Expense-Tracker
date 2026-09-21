@@ -14,7 +14,7 @@ expenses.forEach((expense) => {
 });
 
 updateTransactionCount();
-updateDailyExpense();
+
 
 let editingExpenseId = null;
 
@@ -273,10 +273,11 @@ function updateDailyExpense() {
     if (expense.date === todayDate) {
       sum += expense.expense;
     }
-  });
-  const dailyExpense = document.querySelector(".daily-expense");
-  dailyExpense.innerHTML = `
+    const dailyExpense = document.querySelector(".daily-expense");
+    dailyExpense.innerHTML = `
     <h3>Daily Expense</h3>
     <p>${sum}</p>
     `;
+  });
 }
+updateDailyExpense();
