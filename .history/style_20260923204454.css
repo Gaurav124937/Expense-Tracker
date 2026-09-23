@@ -232,10 +232,11 @@ body {
 
 .category-expense-list h3 {
   margin: 0 0 8px;
-  font-size: 25px;
+  font-size: ;
 }
 
 .category-expense-list p {
   margin: 0;
   font-size: 18px;
+  font-weight: bold;
 }

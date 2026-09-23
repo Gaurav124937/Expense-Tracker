@@ -209,33 +209,17 @@ body {
   border-radius: 5px;
   border: none;
 }
-.category-expense {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  background-color: white;
-}
+const categoryList = document.querySelector(".category-expense-list");
 
-.category-expense-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
+categoryList.innerHTML = "";
 
-.category-expense-list > div {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: rgb(179, 150, 34);
-}
+for (const category in categoryExpenses) {
+  const categoryElement = document.createElement("div");
 
-.category-expense-list h3 {
-  margin: 0 0 8px;
-  font-size: 25px;
-}
+  categoryElement.innerHTML = `
+    <h3>${category}</h3>
+    <p>₹${categoryExpenses[category]}</p>
+  `;
 
-.category-expense-list p {
-  margin: 0;
-  font-size: 18px;
+  categoryList.appendChild(categoryElement);
 }

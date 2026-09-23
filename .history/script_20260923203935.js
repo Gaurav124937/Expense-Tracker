@@ -312,19 +312,19 @@ function categoryWiseExpense() {
     }
   });
 
-  const categoryList = document.querySelector(".category-expense-list");
+const categoryList = document.querySelector(".category-expense-list");
 
-  categoryList.innerHTML = "";
+categoryList.innerHTML = "";
 
-  for (const category in categoryExpenses) {
-    const categoryElement = document.createElement("div");
+for (const category in categoryExpenses) {
+  const categoryElement = document.createElement("div");
 
-    categoryElement.innerHTML = `
+  categoryElement.innerHTML = `
     <h3>${category}</h3>
     <p>₹${categoryExpenses[category]}</p>
   `;
 
-    categoryList.appendChild(categoryElement);
-  }
+  categoryList.appendChild(categoryElement);
+}
 }
 categoryWiseExpense();
