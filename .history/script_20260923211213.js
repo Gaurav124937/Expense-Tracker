@@ -328,16 +328,16 @@ function categoryWiseExpense() {
   }
   const chartCanvas = document.querySelector("#expenseChart");
 
-  new Chart(chartCanvas, {
-    type: "pie",
-    data: {
-      labels: Object.keys(categoryExpenses),
-      datasets: [
-        {
-          data: Object.values(categoryExpenses),
-        },
-      ],
-    },
-  });
+new Chart(chartCanvas, {
+  type: "pie",
+  data: {
+    labels: Object.keys(categoryExpenses),
+    datasets: [
+      {
+        data: Object.values(categoryExpenses),
+      },
+    ],
+  },
+});
 }
 categoryWiseExpense();

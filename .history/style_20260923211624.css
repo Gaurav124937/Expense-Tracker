@@ -107,7 +107,6 @@
   block-size: 30px;
   color: white;
   background-color: rgba(255, 0, 0, 0.761);
-  cursor: pointer;
 }
 
 .edit-expense-button {
@@ -120,7 +119,6 @@
   block-size: 30px;
   color: white;
   background-color: rgb(0, 0, 0);
-  cursor: pointer;
 }
 
 .expense-info {
