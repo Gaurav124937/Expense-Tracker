@@ -6,8 +6,6 @@ addExpenseButton.addEventListener("click", function showExpenseForm() {
   expenseForm.classList.toggle("form-hidden");
 });
 
-let expenseChart;
-
 const expenses = [];
 getData();
 
@@ -160,7 +158,6 @@ function renderExpense(expense) {
     updateTransactionCount();
     updateDailyExpense();
     updateMonthlyExpense();
-    categoryWiseExpense();
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -208,6 +205,12 @@ function updateExpenseList() {
 
     return matchesSearch && matchesCategory;
   });
+
+  if (selectedSort === "latest") {
+    expenses.forEach((expense) => {
+      renderExpense(expense);
+    });
+  }
 
   if (selectedSort === "highest") {
     displayedExpenses.sort((a, b) => b.expense - a.expense);
@@ -299,6 +302,9 @@ function updateMonthlyExpense() {
     <p>${sum}</p>
     `;
 }
+
+let expenseChart;
+
 function categoryWiseExpense() {
   const categoryExpenses = {};
 
@@ -325,22 +331,23 @@ function categoryWiseExpense() {
     categoryList.appendChild(categoryElement);
   }
   const chartCanvas = document.querySelector("#expenseChart");
-  if (!expenseChart) {
-    expenseChart = new Chart(chartCanvas, {
-      type: "pie",
-      data: {
-        labels: Object.keys(categoryExpenses),
-        datasets: [
-          {
-            data: Object.values(categoryExpenses),
-          },
-        ],
-      },
-    });
-  } else {
-    expenseChart.data.labels = Object.keys(categoryExpenses);
-    expenseChart.data.datasets[0].data = Object.values(categoryExpenses);
 
-    expenseChart.update();
-  }
+  expenseChart = new Chart(chartCanvas, {
+    type: "pie",
+    data: {
+      labels: Object.keys(categoryExpenses),
+      datasets: [
+        {
+          data: Object.values(categoryExpenses),
+        },
+      ],
+    },
+  });
+  if (expenseChart) {
+  expenseChart.data.labels = Object.keys(categoryExpenses);
+  expenseChart.data.datasets[0].data = Object.values(categoryExpenses);
+
+  expenseChart.update();
 }
+}
+

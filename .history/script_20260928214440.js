@@ -209,6 +209,7 @@ function updateExpenseList() {
     return matchesSearch && matchesCategory;
   });
 
+
   if (selectedSort === "highest") {
     displayedExpenses.sort((a, b) => b.expense - a.expense);
   }

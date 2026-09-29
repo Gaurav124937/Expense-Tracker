@@ -6,7 +6,6 @@ addExpenseButton.addEventListener("click", function showExpenseForm() {
   expenseForm.classList.toggle("form-hidden");
 });
 
-let expenseChart;
 
 const expenses = [];
 getData();
@@ -21,6 +20,7 @@ updateMonthlyExpense();
 categoryWiseExpense();
 
 let editingExpenseId = null;
+
 
 // FUNCTION WORKS ON SUBMITTING THE FORM
 expenseForm.addEventListener("submit", function (event) {
@@ -208,6 +208,12 @@ function updateExpenseList() {
 
     return matchesSearch && matchesCategory;
   });
+
+  if (selectedSort === "latest") {
+    expenses.forEach((expense) => {
+      renderExpense(expense);
+    });
+  }
 
   if (selectedSort === "highest") {
     displayedExpenses.sort((a, b) => b.expense - a.expense);

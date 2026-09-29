@@ -6,7 +6,6 @@ addExpenseButton.addEventListener("click", function showExpenseForm() {
   expenseForm.classList.toggle("form-hidden");
 });
 
-let expenseChart;
 
 const expenses = [];
 getData();
@@ -208,6 +207,12 @@ function updateExpenseList() {
 
     return matchesSearch && matchesCategory;
   });
+
+  if (selectedSort === "latest") {
+    expenses.forEach((expense) => {
+      renderExpense(expense);
+    });
+  }
 
   if (selectedSort === "highest") {
     displayedExpenses.sort((a, b) => b.expense - a.expense);
