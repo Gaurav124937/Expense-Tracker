@@ -50,27 +50,25 @@ expenseForm.addEventListener("submit", function (event) {
     const index = expenses.findIndex(
       (expense) => expense.id === editingExpenseId,
     );
+    const expenseToSave = expenses[index];
     if (index !== -1) {
-      const expenseToSave = expenses[index];
       expenseToSave.expense = amount;
       expenseToSave.description = descript;
       expenseToSave.category = category;
       expenseToSave.date = date;
+    }
 
-      storingData();
-      expenseForm.reset();
-      const expenseElement = document.getElementById(editingExpenseId);
-      if (expenseElement) {
-        const infoDiv = expenseElement.querySelector(".expense-info");
-        infoDiv.innerHTML = `
+    storingData();
+    expenseForm.reset();
+    const expenseElement = document.getElementById(editingExpenseId);
+    const infoDiv = expenseElement.querySelector(".expense-info");
+    infoDiv.innerHTML = `
     <p class="expense-text-styling expense-description ">${expenseToSave.description}</p>
     <p class="expense-text-styling">₹${expenseToSave.expense}</p>
     <p class="expense-text-styling">${expenseToSave.category}</p>
-    <p class="expense-text-styling">${expenseToSave.date}</p>
-    `;
-        attachDescriptionListener(expenseElement);
-      }
-    }
+  <p class="expense-text-styling">${expenseToSave.date}</p>
+  `;
+    updateTotal();
     editingExpenseId = null;
   }
 
@@ -128,7 +126,12 @@ function renderExpense(expense) {
   expenseElement.appendChild(actionDiv);
 
   expenseList.appendChild(expenseElement);
-  attachDescriptionListener(expenseElement);
+  const descriptionElement = expenseElement.querySelector(
+    ".expense-description",
+  );
+  descriptionElement.addEventListener("click", () => {
+    descriptionElement.classList.toggle("expanded");
+  });
 
   const deleteExpense = expenseElement.querySelector(".delete-expense-button");
   deleteExpense.addEventListener("click", function () {
@@ -142,7 +145,7 @@ function renderExpense(expense) {
 
     storingData();
 
-    updateDashboard();
+    update
   });
 
   const editExpense = expenseElement.querySelector(".edit-expense-button");
@@ -219,17 +222,6 @@ function updateExpenseList() {
     renderExpense(expense);
   });
 }
-//FUNCTION FOR ATTACHING DESCRIPTION LISTENER
-function attachDescriptionListener(expenseElement) {
-  const descriptionElement = expenseElement.querySelector(
-    ".expense-description",
-  );
-
-  descriptionElement.addEventListener("click", () => {
-    descriptionElement.classList.toggle("expanded");
-  });
-}
-
 //FUNCTION FOR UPDATING TOTAL
 function updateTotal() {
   const totalAmount = document.querySelector(".total-expense");
@@ -271,7 +263,7 @@ function updateDailyExpense() {
   });
   const dailyExpense = document.querySelector(".daily-expense");
   dailyExpense.innerHTML = `
-    <h3>Today's Expense</h3>
+    <h3>Daily Expense</h3>
     <p>${sum}</p>
     `;
 }

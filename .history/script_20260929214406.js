@@ -60,18 +60,17 @@ expenseForm.addEventListener("submit", function (event) {
       storingData();
       expenseForm.reset();
       const expenseElement = document.getElementById(editingExpenseId);
-      if (expenseElement) {
-        const infoDiv = expenseElement.querySelector(".expense-info");
-        infoDiv.innerHTML = `
+      const infoDiv = expenseElement.querySelector(".expense-info");
+      infoDiv.innerHTML = `
     <p class="expense-text-styling expense-description ">${expenseToSave.description}</p>
     <p class="expense-text-styling">₹${expenseToSave.expense}</p>
     <p class="expense-text-styling">${expenseToSave.category}</p>
     <p class="expense-text-styling">${expenseToSave.date}</p>
     `;
-        attachDescriptionListener(expenseElement);
-      }
+
+      attachDescriptionListener(ex)
+      editingExpenseId = null;
     }
-    editingExpenseId = null;
   }
 
   updateDashboard();
@@ -222,7 +221,7 @@ function updateExpenseList() {
 //FUNCTION FOR ATTACHING DESCRIPTION LISTENER
 function attachDescriptionListener(expenseElement) {
   const descriptionElement = expenseElement.querySelector(
-    ".expense-description",
+    ".expense-description"
   );
 
   descriptionElement.addEventListener("click", () => {
