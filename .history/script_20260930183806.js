@@ -73,7 +73,7 @@ expenseForm.addEventListener("submit", function (event) {
     }
     editingExpenseId = null;
   }
-  expenseForm.classList.toggle("form-hidden");
+  
   updateDashboard();
 });
 
