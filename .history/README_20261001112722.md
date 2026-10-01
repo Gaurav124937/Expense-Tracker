@@ -1,0 +1,56 @@
+# Expense Tracker
+
+A responsive web application for tracking and organizing daily expenses,
+built with HTML, CSS, and JavaScript.
+
+## Features
+
+-   Add new expenses
+-   Edit and delete existing expenses
+-   Persist expense data with browser Local Storage
+-   Search and filter expenses
+-   Sort expenses
+-   Dashboard summary cards
+-   Category-wise expense visualization using Chart.js
+-   Expand and collapse expense descriptions
+-   Responsive layout for desktop and mobile
+-   Smooth scrolling to the expense list and expense form
+
+## Tech Stack
+
+-   HTML5
+-   CSS3
+-   JavaScript
+-   Chart.js
+-   Browser Local Storage
+
+## Getting Started
+
+1.  Clone the repository:
+
+    ``` bash
+    git clone https://github.com/Gaurav124937/Expense-Tracker.git
+    ```
+
+2.  Open the project folder.
+
+3.  Open `index.html` in your browser.
+
+No backend setup is required.
+
+## Data Storage
+
+Expense data is saved in the browser's Local Storage. It is stored
+locally for that browser and is not automatically synchronized across
+devices or browsers.
+
+## Future Improvements
+
+-   Export expenses to CSV
+-   Monthly spending reports
+-   Budget limits and alerts
+-   Improved accessibility
+
+## Author
+
+Gaurav Singh
