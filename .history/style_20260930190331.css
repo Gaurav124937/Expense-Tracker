@@ -1,0 +1,265 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+.buttons-grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 10px;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  block-size: 40px;
+  color: white;
+  background-color: black;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.formating {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 75%;
+}
+.save-expense-button {
+  padding: 10px;
+  border-radius: 5px;
+  border-color: black;
+  border: 1px solid;
+  margin-top: 20px;
+  font-size: 15px;
+  block-size: 40px;
+  color: white;
+  background-color: black;
+  width: 45%;
+}
+.form-hidden {
+  display: none;
+}
+
+.main-container {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+}
+
+.expense-list-view {
+  display: grid;
+  flex-direction: row;
+  padding: 10px;
+  gap: 10px;
+  overflow-x: auto;
+}
+.expense-display-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 220px;
+  min-height: 220px;
+  background-color: rgba(0, 26, 255, 0.585);
+  height: auto;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.expense-text-styling {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.delete-expense-button {
+  padding: 5px;
+  border-radius: 5px;
+  width: 50%;
+  border: none;
+  margin-top: 20px;
+  font-size: 15px;
+  block-size: 30px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.761);
+  cursor: pointer;
+}
+
+.edit-expense-button {
+  padding: 5px;
+  border-radius: 5px;
+  width: 50%;
+  border: none;
+  margin-top: 20px;
+  font-size: 15px;
+  block-size: 30px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+.expense-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+body {
+  background-color: rgba(255, 94, 0, 0.288);
+}
+
+.expense-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.expense-description.expanded {
+  display: block;
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  overflow-wrap: break-word;
+}
+.expense-search {
+  width: 50%;
+  margin: 0;
+  font-size: 13px;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+.category-filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.category-filter {
+  width: 25%;
+  font-size: 13px;
+  padding: 6px;
+  margin-bottom: 20px;
+  margin: 0;
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  gap: 15px;
+}
+
+.search-filter-container,
+.category-filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.filter-form-label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.expense-card-sort {
+  margin-left: 10px;
+  font-size: 13px;
+  width: 20%;
+}
+.sort-expense-dropdown {
+  color: white;
+  background-color: black;
+  padding: 4px;
+  font-size: 13px;
+  border-radius: 5px;
+  border: none;
+}
+.category-expense {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.category-expense-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.category-expense-list > div {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: rgb(179, 150, 34);
+}
+
+.category-expense-list h3 {
+  margin: 0 0 8px;
+  font-size: 25px;
+}
+
+.category-expense-list p {
+  margin: 0;
+  font-size: 18px;
+}
+.expense-chart {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.expense-chart h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.expense-chart canvas {
+  max-height: 350px;
+}
+.chart-container {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}

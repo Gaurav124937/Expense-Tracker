@@ -90,7 +90,10 @@
 
 .expense-list-view {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 230px), 1fr)
+  );
   gap: 16px;
   padding: 10px 0;
 }
@@ -104,9 +107,7 @@
   border-radius: 12px;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
-  transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .expense-display-card:hover {
@@ -266,7 +267,10 @@ h1 {
 
 .category-expense-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 220px), 1fr)
+  );
   gap: 16px;
 }
 
@@ -312,69 +316,4 @@ h1 {
   position: relative;
   height: 350px;
   width: 100%;
-}
-
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .filter-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .filter-container > div:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 12px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .buttons-grid {
-    flex-wrap: wrap;
-  }
-
-  .buttons-grid .btn {
-    flex: 1;
-  }
-
-  .filter-container {
-    grid-template-columns: 1fr;
-  }
-
-  .filter-container > div:last-child {
-    grid-column: auto;
-  }
-
-  .clear-filters {
-    width: 100%;
-  }
-
-  .expense-list-view,
-  .category-expense-list {
-    grid-template-columns: 1fr;
-  }
-
-  .expense-display-card {
-    min-height: 200px;
-  }
-
-  .formating {
-    width: 100%;
-  }
-
-  .save-expense-button {
-    width: 100%;
-  }
-
-  .chart-container {
-    height: 280px;
-  }
 }

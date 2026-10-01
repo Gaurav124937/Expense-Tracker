@@ -243,7 +243,6 @@ const clearFiltersButton = document.querySelector(".clear-filters");
 clearFiltersButton.addEventListener("click", function () {
   searchInput.value = "";
   categoryFilter.value = "all";
-  sortExpenses.value = "";
 
   updateExpenseList();
 });
