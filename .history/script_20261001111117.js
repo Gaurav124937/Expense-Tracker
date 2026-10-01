@@ -4,22 +4,16 @@ const expenseForm = document.querySelector(".expense-form");
 
 addExpenseButton.addEventListener("click", function showExpenseForm() {
   expenseForm.classList.toggle("form-hidden");
-  expenseForm.style.display = "block";
-
-  expenseForm.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
 });
 
 const manageExpenseBtn = document.querySelector(".manage-expense-button");
-const expenseList = document.querySelector(".expense-list");
+const expenseList = document.querySelector("#expense-list");
 
 manageExpenseBtn.addEventListener("click", () => {
-  expenseList.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+    expenseList.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 });
 let expenseChart;
 
